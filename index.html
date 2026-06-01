@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="google-site-verification" content="9ESqWvKWaCWa9_giYGYyZjhWyBq9MKQtdRefB9vMSh8" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gokila Kiruba | Full-Stack Developer</title>
+  <title>Gokila Kiruba | Full Stack Developer</title>
   <link rel="stylesheet" href="icon/all.min.css">
   <style>
     :root {
@@ -29,8 +30,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     header {
@@ -79,7 +87,8 @@
 
     .nav-links a {
       text-decoration: none;
-      font-size: 20px;;
+      font-size: 20px;
+      ;
       color: var(--dark);
       font-weight: 500;
       transition: all 0.3s ease;
@@ -141,7 +150,7 @@
     .profile-img {
       width: 300px;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .hero {
@@ -164,14 +173,14 @@
       font-size: 3.5rem;
       margin-bottom: 1rem;
       line-height: 1.2;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero-content h2 {
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
       font-weight: 400;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .hero-content p {
@@ -360,79 +369,239 @@
 
     .contact {
       padding: 6rem 2rem;
-      background: white;
+      background: var(--light);
       text-align: center;
     }
 
-    .contact-info {
-      max-width: 600px;
+    @keyframes slowPulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
       margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: box-shadow 0.4s ease;
+      text-align: left;
+    }
+
+    .contact-container:hover {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-left {
+      flex: 1 1 400px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 4rem 3rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-left::before {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      top: -50px;
+      right: -50px;
+      animation: slowPulse 6s infinite ease-in-out;
+    }
+
+    .contact-left::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      bottom: 20px;
+      left: 20px;
+      animation: slowPulse 8s infinite ease-in-out 1s;
+    }
+
+    .contact-info {
+      z-index: 1;
+      margin-top: 2rem;
+    }
+
+    .contact-left h3 {
+      font-size: 2rem;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+
+    .contact-left p.sub-text {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2rem;
+      z-index: 1;
+      line-height: 1.6;
     }
 
     .contact-info p {
       margin: 1.5rem 0;
-      font-size: 1.2rem;
-      color: var(--text);
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      justify-content: flex-start;
+      gap: 1rem;
     }
 
     .contact-info i {
-      color: var(--secondary);
-      font-size: 1.3rem;
+      color: white;
+      font-size: 1.5rem;
+      width: 30px;
+      text-align: center;
     }
 
     .social-links {
       margin-top: 3rem;
       display: flex;
-      justify-content: center;
-      gap: 2rem;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      z-index: 1;
     }
 
     .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      background: var(--light);
-      color: var(--secondary);
-      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1.3rem;
       transition: all 0.3s ease;
-      border: 1px solid var(--secondary);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-decoration: none;
     }
 
     .social-links a:hover {
-      background: var(--secondary);
-      color: white;
+      background: white;
+      color: var(--secondary);
       transform: translateY(-5px);
+    }
+
+    .contact-right {
+      flex: 1 1 400px;
+      padding: 4rem 3rem;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-right h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-right input,
+    .contact-right textarea {
+      padding: 1rem 1.2rem;
+      border: 2px solid #e1e5ee;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #f9f9fc;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .contact-right input:focus,
+    .contact-right textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(17, 89, 232, 0.1);
+    }
+
+    .contact-right button {
+      align-self: flex-start;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(17, 89, 232, 0.2);
+    }
+
+    .contact-right button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(17, 89, 232, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+
+      .contact-left,
+      .contact-right {
+        flex: 1 1 auto;
+        width: 100%;
+        padding: 2.5rem 1.5rem;
+        box-sizing: border-box;
+      }
     }
 
     .fa-vercel {
       display: inline-block;
       width: 1em;
       height: 1em;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1155 1000'%3E%3Cpath fill='%231159e8' d='M577.344 0L1154.69 1000H0L577.344 0Z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1155 1000'%3E%3Cpath fill='white' d='M577.344 0L1154.69 1000H0L577.344 0Z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       vertical-align: -0.125em;
+      transition: all 0.3s ease;
     }
 
     .social-links a:hover .fa-vercel {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1155 1000'%3E%3Cpath fill='white' d='M577.344 0L1154.69 1000H0L577.344 0Z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1155 1000'%3E%3Cpath fill='%231159e8' d='M577.344 0L1154.69 1000H0L577.344 0Z'/%3E%3C/svg%3E");
     }
 
     .social-icon {
-      color: var(--secondary);
+      color: white;
       transition: all 0.3s ease;
     }
 
     .social-links a:hover .social-icon {
-      color: white;
+      color: var(--secondary);
     }
 
     footer {
@@ -450,11 +619,11 @@
       .hero-content h1 {
         font-size: 2.8rem;
       }
-      
+
       .hero-content h2 {
         font-size: 1.5rem;
       }
-      
+
       .nav-links {
         position: fixed;
         top: 70px;
@@ -463,18 +632,18 @@
         flex-direction: column;
         background: white;
         padding: 2rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
       }
-      
+
       .nav-links.active {
         left: 0;
       }
-      
+
       .nav-links li {
         margin: 1rem 0;
       }
-      
+
       .hamburger {
         display: block;
       }
@@ -482,15 +651,15 @@
       .about-content {
         flex-direction: column;
       }
-  
+
       .profile-img {
         width: 250px;
       }
-      
+
       .project-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .skills-container {
         grid-template-columns: 1fr;
       }
@@ -500,32 +669,33 @@
       .hero-content h1 {
         font-size: 2.2rem;
       }
-      
+
       .hero-content h2 {
         font-size: 1.2rem;
       }
-      
+
       .btn {
         display: block;
         width: 100%;
         margin: 0.5rem 0;
       }
-      
+
       .project-links {
         flex-direction: column;
       }
-      
+
       .project-links a {
         width: 100%;
         text-align: center;
       }
-      
+
       nav {
         padding: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -535,8 +705,10 @@
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#internship">Internship</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger">☰</div>
@@ -546,9 +718,9 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>GOKILA KIRUBA</h1>
-      <h2>Full-Stack Developer</h2>
+      <h2>Full Stack Developer</h2>
       <p>Building high-performance, visually engaging web solutions with modern technologies and clean code.</p>
-      <a href="resume/FullStack CV.pdf" download class="btn btn-outline">Download CV</a>
+      <a href="resume/Gokila Kiruba_Resume.pdf" download class="btn btn-outline">Download CV</a>
     </div>
   </section>
 
@@ -557,8 +729,13 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
         <div class="about-text">
-          <p>I'm a passionate Full Stack Developer with expertise in building web applications. With a strong foundation in both frontend and backend technologies, I create efficient, scalable, and user-friendly solutions.</p>
-          <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.</p>
+          <p>Hello! I'm a passionate Computer Science professional holding both a Bachelor's and Master's degree. I
+            specialize in building high-performance, visually engaging web applications. As a highly motivated Full
+            Stack Developer, I enjoy working across the entire stack—from designing intuitive front-ends with HTML, CSS,
+            and JavaScript, to architecting robust back-ends and managing databases.</p>
+          <p>I have hands-on experience with modern frameworks and always strive to write clean, efficient code. I'm
+            currently seeking an entry-level role where I can apply my technical expertise, continue learning, and make
+            a meaningful impact in a dynamic business environment.</p>
         </div>
         <div class="about-image">
           <img src="img/ki.jpg" alt="Gokila Kiruba" class="profile-img">
@@ -567,23 +744,89 @@
     </div>
   </section>
 
+  <section id="internship" class="projects">
+    <h2 class="section-title">Internships</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Intern (Developer)</h3>
+        <p style="margin-bottom: 0;"><strong>Company:</strong> BizDom Solutions</p>
+        <p style="margin-bottom: 0;"><strong>Duration:</strong> september 2025</p>
+        <ul style="list-style-position: inside; color: var(--text); margin-top: 1rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.5rem;">Engaged in hands-on training with the ASP.NET framework, C#, and MySQL
+            Workbench.</li>
+          <li>Developing dynamic web applications with emphasis on responsive UI and optimized backend integration.</li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h3>Intern (Java Developer)</h3>
+        <p style="margin-bottom: 0;"><strong>Company:</strong> Qvesys Info-Tech</p>
+        <p style="margin-bottom: 0;"><strong>Duration:</strong> May 2025</p>
+        <ul style="list-style-position: inside; color: var(--text); margin-top: 1rem; line-height: 1.7;">
+          <li style="margin-bottom: 0.5rem;">Leveraging React for front-end development to build interactive and
+            scalable interfaces.</li>
+          <li>Utilizing Postman for API testing and validation to ensure application reliability and performance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="projects" class="projects">
     <h2 class="section-title">My Projects</h2>
     <div class="project-grid">
       <div class="project-card">
-        <h3>Electronic Health Record System</h3>
-        <p>A comprehensive digital platform for managing patient medical records with robust security features. Implemented role-based access control (RBAC) to ensure data privacy and HIPAA compliance. The system features patient history tracking, prescription management, and analytics dashboard.</p>
+        <h3>GASC Kuthalam Website</h3>
+        <p>A responsive web application providing academic and administrative information for Government Arts and
+          Science College. Features dynamic content management, admission portals, and notices.</p>
         <div class="project-links">
-          <a href="https://vercel.com/gokila-kirubas-projects" target="_blank" class="demo-link">Live Demo</a>
-          <a href="https://github.com/GokilaKiruba" target="_blank" class="code-link">View Code</a>
+          <a href="https://gasckuthalam.ac.in/" target="_blank" class="demo-link">🌐 Live Demo</a>
+          <!-- <a href="#" target="_blank" class="code-link">👁️ View Code</a> -->
         </div>
       </div>
       <div class="project-card">
-        <h3>MCQ</h3>
-        <p>An interactive MCQ application focused on Profit and Loss concepts in financial education. Features include real-time scoring, performance analytics, and personalized feedback. Built with React for the frontend and Node.js for the backend, with MongoDB for data storage.</p>
+        <h3>Laboratory Management Software</h3>
+        <p>A comprehensive web application to automate daily laboratory activities including patient records, test
+          management, billing, and report generation. Built securely with PHP and MySQL.</p>
         <div class="project-links">
-          <a href="https://mcq-alpha.vercel.app/" target="_blank" class="demo-link">Live Demo</a>
-          <a href="https://github.com/GokilaKiruba/MCQ" target="_blank" class="code-link">View Code</a>
+          <a href="https://qvesys.in/Lab/" target="_blank" class="demo-link">🌐 Live Demo</a>
+          <!-- <a href="#" target="_blank" class="code-link">👁️ View Code</a> -->
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>MCQ – Profit and Loss</h3>
+        <p>Developed an interactive quiz application for assessing financial literacy and concepts. Integrated real-time
+          scoring, performance tracking, and analytics for user improvement.</p>
+        <div class="project-links">
+          <a href=" https://gokilakiruba.github.io/MCQ/" target="_blank" class="demo-link">🌐 Live Demo</a>
+          <!--<a href="#" target="_blank" class="code-link">👁️ View Code</a>-->
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Electronic Health Record System</h3>
+        <p>Engineered a secure and efficient digital system for managing patient medical records. Implemented role-based
+          access controls (RBAC) to ensure data privacy and security.</p>
+        <div class="project-links">
+          <!--<a href="#" target="_blank" class="demo-link">🌐 Live Demo</a>-->
+          <a href="https://github.com/GokilaKiruba" target="_blank" class="code-link">👁️ View Code</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Clinic Management System</h3>
+        <p>A web-based solution for managing clinic appointments, patient records, and billing. Features include
+          calendar scheduling, doctor availability, and secure data handling.</p>
+        <div class="project-links">
+          <!-- <a href="#" target="_blank" class="demo-link">🌐 Live Demo</a>-->
+          <a href="https://github.com/GokilaKiruba/Clinic-Management" target="_blank" class="code-link">👁️ View
+            Code</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Automatic Timetable Generator</h3>
+        <p>An AI-powered tool that creates optimal class timetables based on constraints such as teacher availability,
+          room capacity, and subject requirements.</p>
+        <div class="project-links">
+          <!-- <a href="#" target="_blank" class="demo-link">🌐 Live Demo</a>-->
+          <a href="https://github.com/GokilaKiruba/Timetable-Generator" target="_blank" class="code-link">👁️ View
+            Code</a>
         </div>
       </div>
     </div>
@@ -596,11 +839,8 @@
         <h3>Programming Languages</h3>
         <ul>
           <li>Java</li>
-          <li>C</li>
-          <li>C++</li>
           <li>C#</li>
           <li>PHP</li>
-          <li>Python</li>
         </ul>
       </div>
       <div class="skill-category">
@@ -610,7 +850,6 @@
           <li>CSS</li>
           <li>JavaScript</li>
           <li>Bootstrap</li>
-          <li>Tailwind CSS</li>
         </ul>
       </div>
       <div class="skill-category">
@@ -619,16 +858,6 @@
           <li>Spring Boot</li>
           <li>.NET</li>
           <li>React</li>
-          <li>Angular</li>
-          <li>Node.js</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Development Tools</h3>
-        <ul>
-          <li>Visual Studio Code</li>
-          <li>Eclipse</li>
-          <li>IntelliJ</li>
         </ul>
       </div>
       <div class="skill-category">
@@ -643,14 +872,6 @@
         <h3>CMS Platforms</h3>
         <ul>
           <li>WordPress</li>
-          <li>Joomla</li>
-          <li>Drupal</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Database</h3>
-        <ul>
-          <li>MySQL</li>
         </ul>
       </div>
       <div class="skill-category">
@@ -663,28 +884,94 @@
       <div class="skill-category">
         <h3>Development Tools</h3>
         <ul>
+          <li>Visual Studio Code</li>
+          <li>Visual Studio</li>
+          <li>Eclipse</li>
+          <li>IntelliJ</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Backend Development Tools:</h3>
+        <ul>
+          <li>Postman</li>
           <li>XAMPP Server</li>
         </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Database Development Tools</h3>
+        <ul>
+          <li>MySQL Workbench</li>
+          <li>phpMyAdmin</li>
+          <li>MySQL Query Browser</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates" class="projects">
+    <h2 class="section-title">Certifications</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Graphics & Web Designing</h3>
+        <p style="margin-bottom: 0;"><strong>Issuing Organization:</strong> NCVRT</p>
+        <p style="margin-bottom: 0;"><strong>Year:</strong> 2022</p>
+      </div>
+      <div class="project-card">
+        <h3>Google Data Analytics</h3>
+        <p style="margin-bottom: 0;"><strong>Issuing Organization:</strong> Coursera</p>
+        <p style="margin-bottom: 0;"><strong>Year:</strong> 2022</p>
+      </div>
+      <div class="project-card">
+        <h3>Cyber Security</h3>
+        <p style="margin-bottom: 0;"><strong>Issuing Organization:</strong> Cisco</p>
+        <p style="margin-bottom: 0;"><strong>Year:</strong> 2023</p>
+      </div>
+      <div class="project-card">
+        <h3>Java Full-Stack Development</h3>
+        <p style="margin-bottom: 0;"><strong>Issuing Organization:</strong> Qvesys Info-Tech</p>
+        <p style="margin-bottom: 0;"><strong>Year:</strong> 2025</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h2 class="section-title">Get In Touch</h2>
-    <div class="contact-info">
-      <p><i class="fas fa-phone"></i> +91 7339543231</p>
-      <p><i class="fas fa-envelope"></i> gokilakiruba.1809@gmail.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kumbakonam, Tamil Nadu</p>
-      <div class="social-links">
-        <a href="https://github.com/GokilaKiruba" target="_blank" title="GitHub"><i class="fab fa-github social-icon"></i></a>
-        <a href="https://www.linkedin.com/in/gokila-kiruba-selvaraj-la5689245/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in social-icon"></i></a>
-        <a href="https://vercel.com/gokila-kirubas-projects" target="_blank" title="Vercel"><i class="fa-vercel"></i></a>
+    <div class="contact-container">
+      <div class="contact-left">
+        <h3>Contact Information</h3>
+        <p class="sub-text">Fill up the form and I will get back to you within 24 hours.</p>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +91 7339543231</p>
+          <p><i class="fas fa-envelope"></i> gokilakiruba18@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Kumbakonam, Tamil Nadu</p>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/GokilaKiruba" target="_blank" title="GitHub"><i
+              class="fab fa-github social-icon"></i></a>
+          <a href="https://www.linkedin.com/in/gokila-kiruba-selvaraj-la5689245/" target="_blank" title="LinkedIn"><i
+              class="fab fa-linkedin-in social-icon"></i></a>
+          <a href="https://vercel.com/gokila-kirubas-projects" target="_blank" title="Vercel"><i
+              class="fa-vercel"></i></a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <h3>Send a Message</h3>
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Replace 'YOUR_ACCESS_KEY_HERE' with your actual Web3Forms access key -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea name="message" placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2024 Gokila Kiruba. All rights reserved.</p>
+    <p>&copy; 2026 Gokila Kiruba. All rights reserved.</p>
   </footer>
 
   <script>
@@ -697,7 +984,7 @@
       });
     });
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
@@ -706,4 +993,5 @@
     });
   </script>
 </body>
+
 </html>
